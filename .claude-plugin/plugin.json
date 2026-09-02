@@ -1,7 +1,7 @@
 {
   "name": "sqlserver-skills",
-  "version": "1.0.0",
-  "description": "SQL Server performance-tuning skills: monitoring, engineering, infrastructure, operations, HA, cloud, security, offline DuckDB advisor, Erik Darling query-plan analysis, and Microsoft Azure SQL skills.",
+  "version": "1.1.0",
+  "description": "SQL Server performance-tuning skills: monitoring, engineering, infrastructure, operations, HA, cloud, security, offline DuckDB advisor, Erik Darling query-plan analysis, DarlingData procedure operator (darling-tools), Itzik-style T-SQL patterns, and Microsoft Azure SQL skills.",
   "author": { "name": "Alexey", "url": "https://github.com/alexhdsale" },
   "repository": "https://github.com/alexhdsale/sqlserver-skills",
   "license": "MIT (see THIRD_PARTY)",

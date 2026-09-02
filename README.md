@@ -1,6 +1,6 @@
 # sqlserver-skills
 
-Alexey's SQL Server performance-tuning skill collection for AI agents (Claude Code, Claude Cowork, GitHub Copilot CLI, Codex CLI, SSMS 22 Copilot Agent mode). Thirteen skills in the open `SKILL.md` format, packaged as a Claude Code plugin marketplace.
+Alexey's SQL Server performance-tuning skill collection for AI agents (Claude Code, Claude Cowork, GitHub Copilot CLI, Codex CLI, SSMS 22 Copilot Agent mode). Fifteen skills in the open `SKILL.md` format, packaged as a Claude Code plugin marketplace.
 
 | Skill | Upstream | Covers |
 |---|---|---|
@@ -17,6 +17,8 @@ Alexey's SQL Server performance-tuning skill collection for AI agents (Claude Co
 | `azure-sql-database` | MicrosoftDocs/Agent-Skills | Tiers, scaling, performance troubleshooting (official) |
 | `azure-sql-managed-instance` | MicrosoftDocs/Agent-Skills | MI operations and tuning (official) |
 | `azure-sql-virtual-machines` | MicrosoftDocs/Agent-Skills | SQL on Azure VM (official) |
+| `darling-tools` | this repo (wraps erikdarlingdata/DarlingData) | Run and interpret sp_PressureDetector, sp_PerfCheck, sp_QuickieStore, sp_QuickieCache, sp_HumanEvents, sp_HealthParser, sp_LogHunter, sp_IndexCleanup, sp_QueryReproBuilder — parameter catalog, interpretation thresholds, 9 scripts |
+| `itzik-tsql-patterns` | this repo (original, Itzik Ben-Gan style) | Window functions, gaps/islands, top-N per group, paging, interval packing, set-based rewrites, POC indexing, batch mode — 7 references, numbers/calendar tables, runnable cookbook |
 
 ## Install
 
@@ -47,6 +49,8 @@ Just describe the task; the agent matches the skill by description. Examples:
 - "Design a covering index for this predicate, estimate write overhead, include rollback." → `sqlserver-engineering`
 - "Run the capture bundle, here are the CSVs, give me a prioritized health report." → `sqlserver-advisor`
 - "GP 8 vCore vs Hyperscale for this workload?" → `azure-sql-database` / `sqlserver-cloud`
+- "Run sp_PressureDetector, here is the output. Memory or CPU?" → `darling-tools`
+- "Rewrite this running-balance cursor as a window function." → `itzik-tsql-patterns`
 
 Give the agent server access with `sqlcmd`, Microsoft's MSSQL MCP, or Erik Darling's Performance Studio / Performance Monitor MCP servers. Diagnostic scripts are read-only but review headers before running on production; they require `VIEW SERVER STATE`.
 
@@ -57,6 +61,8 @@ Give the agent server access with `sqlcmd`, Microsoft's MSSQL MCP, or Erik Darli
 ```
 ./update-upstream.sh && git diff --stat && git commit -am "sync upstream"
 ```
+
+`darling-tools` and `itzik-tsql-patterns` are authored here, not vendored. The script records the DarlingData commit the procedure catalog was written against in `UPSTREAM_COMMITS.txt`; when it moves, re-check `skills/darling-tools/references/procedure-catalog.md` against the upstream README parameter tables.
 
 `UPSTREAM_COMMITS.txt` records the exact upstream commits vendored.
 

@@ -16,6 +16,8 @@ skip fundamentals, give evidence, T-SQL, DMV checks, and validation steps.
 - `sqlserver-cloud` — Azure SQL DB/MI, SQL on Azure VM, AWS RDS, migration tooling.
 - `sqlserver-security` — auth, permissions, TDE/AE/TLS, RLS, DDM, audit.
 - `azure-sql-database`, `azure-sql-managed-instance`, `azure-sql-virtual-machines` — Microsoft-authored platform skills (tiers, MAXDOP, Intelligent Insights, troubleshooting).
+- `darling-tools` — operator/interpreter for Erik Darling's DarlingData procs (sp_PressureDetector, sp_PerfCheck, sp_QuickieStore, sp_QuickieCache, sp_HumanEvents, sp_HealthParser, sp_LogHunter, sp_IndexCleanup, sp_QueryReproBuilder, sp_QueryStoreCleanup). Procs are not vendored; `references/procedure-catalog.md` is the parameter reference, `references/interpretation-rules.md` the thresholds. sp_HumanEvents, sp_IndexCleanup DDL and sp_QueryStoreCleanup are the only mutating paths.
+- `itzik-tsql-patterns` — set-based T-SQL patterns (window frames, gaps/islands, top-N, paging, intervals, cursor rewrites, POC index, batch mode). Original content; name the pattern, give the query, the index, the trap, the version floor.
 
 ## Conventions
 

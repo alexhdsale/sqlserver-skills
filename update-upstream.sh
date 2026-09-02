@@ -6,6 +6,7 @@ TMP=$(mktemp -d)
 git clone --depth 1 -q https://github.com/chrishuffman5/sqlserver.git "$TMP/ch"
 git clone --depth 1 -q https://github.com/erikdarlingdata/claude-plugins.git "$TMP/ed"
 git clone --depth 1 -q https://github.com/MicrosoftDocs/Agent-Skills.git "$TMP/ms"
+git clone --depth 1 -q https://github.com/erikdarlingdata/DarlingData.git "$TMP/dd"
 for s in sql-server sqlserver-advisor sqlserver-cloud sqlserver-engineering sqlserver-ha-clustering sqlserver-infrastructure sqlserver-monitoring sqlserver-operations sqlserver-security; do
   rm -rf "$ROOT/skills/$s"; cp -r "$TMP/ch/skills/$s" "$ROOT/skills/$s"
 done
@@ -17,6 +18,8 @@ done
   echo "chrishuffman5/sqlserver $(git -C "$TMP/ch" rev-parse HEAD)"
   echo "erikdarlingdata/claude-plugins $(git -C "$TMP/ed" rev-parse HEAD)"
   echo "MicrosoftDocs/Agent-Skills $(git -C "$TMP/ms" rev-parse HEAD)"
+  echo "erikdarlingdata/DarlingData $(git -C "$TMP/dd" rev-parse HEAD) (docs reference only, not vendored)"
 } > "$ROOT/UPSTREAM_COMMITS.txt"
 rm -rf "$TMP"
 echo "synced; review with: git status && git diff"
+echo "if the DarlingData commit changed, diff its README parameter tables against skills/darling-tools/references/procedure-catalog.md"
