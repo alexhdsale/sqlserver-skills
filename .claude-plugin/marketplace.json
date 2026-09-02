@@ -1,0 +1,22 @@
+{
+  "name": "alexhdsale",
+  "description": "Alexey's SQL Server performance-tuning skill collection for Claude Code, Cowork, Copilot CLI and SSMS Copilot.",
+  "owner": {
+    "name": "Alexey",
+    "url": "https://github.com/alexhdsale"
+  },
+  "plugins": [
+    {
+      "name": "sqlserver-skills",
+      "displayName": "SQL Server Performance Skills",
+      "source": "./",
+      "description": "13 SQL Server skills: chrishuffman5/sqlserver (router, monitoring, engineering, infrastructure, operations, HA, cloud, security, DuckDB advisor), Erik Darling's sqlserver-query-plans, and Microsoft's Azure SQL Database / Managed Instance / SQL VM skills.",
+      "version": "1.0.0",
+      "author": { "name": "Alexey", "url": "https://github.com/alexhdsale" },
+      "repository": "https://github.com/alexhdsale/sqlserver-skills",
+      "license": "MIT (see THIRD_PARTY for upstream licenses)",
+      "category": "database",
+      "keywords": ["sql-server", "mssql", "t-sql", "performance-tuning", "query-plan", "azure-sql", "aws-rds", "dba", "wait-stats", "query-store", "index-tuning"]
+    }
+  ]
+}

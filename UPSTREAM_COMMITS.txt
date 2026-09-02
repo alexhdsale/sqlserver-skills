@@ -1,0 +1,3 @@
+chrishuffman5/sqlserver a39dd1849d37b68accfc767e0547c1d297f7e6cf
+erikdarlingdata/claude-plugins a30627353a76413759094fe6fae7347f943162d0
+MicrosoftDocs/Agent-Skills 9fc50b0c233eb802759ced1a8da138c03a0a2d38
