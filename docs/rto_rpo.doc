@@ -1,0 +1,27 @@
+https://www.brentozar.com/archive/2015/09/why-rpo-and-rto-are-actually-performance-metrics-too/
+
+Why RPO and RTO Are Actually Performance Metrics Too
+By Brent Ozar · September 10, 2015 · 11 comments
+
+Architecture
+Backup and Recovery
+CHECKDB and Corruption
+SQL Server
+Most companies come to us saying, “The SQL Server isn’t fast enough. Help us make it go faster.”
+
+They’re kinda surprised when one of the first things we fill out together is a variation of our High Availability and Disaster Recovery Planning Worksheet:
+
+Download the full PDF in our First Responder Kit
+Download the full PDF in our First Responder Kit
+They say things like, “Wait, I’m having a performance problem, not an availability problem.”
+
+But as we start to look at the SQL Server, we often find a few disturbing truths:
+
+The admins have stopped doing transaction log backups and DBCC CHECKDB because the server can’t handle the performance hit
+Management thinks the database can’t lose any data because communication wasn’t clear between admins and managers
+The server isn’t even remotely fast enough to start handling data protection, let alone the end user query requirements
+I know you think I’m making this up. I know you find this hard to believe, dear reader, but not everyone is a diligent DBA like you. Not everyone has their RPO and RTO goals in writing, tests their restores, and patches their SQL Server to prevent known corruption bugs. I hope you’re sitting down when you read this, but there are some database administrators out there who, when given the choice between index rebuilds and transaction log backups, will choose the former on a mission-critical 24/7 system.
+
+I’m sure that would never be you, dear reader, but these database administrators are out there, and they’re exactly the kinds of shops who end up calling us for help.
+
+Then the fun part is that once we establish what the business really wants in terms of data safety, it often dictates a new server – say, moving from a single standalone VM with no HA/DR up to a full-blown failover cluster. And in the process of sketching out that new cluster, we can solve the performance problems at the same time without any changes to their application. (Throwing hardware isn’t the right answer all the time – but when you need to add automatic failover protection, it’s the only answer.)
